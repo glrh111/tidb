@@ -1504,6 +1504,7 @@ func (s *session) NewTxn(ctx context.Context) error {
 			zap.Uint64("txnStartTS", txnID))
 	}
 
+	logutil.Logger(ctx).Info("hello transaction")
 	txn, err := s.store.Begin()
 	if err != nil {
 		return err
